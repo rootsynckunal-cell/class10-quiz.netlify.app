@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Class 10 Quiz Hub</title>
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.contact-content{max-width:600px;margin:120px auto 2rem;padding:2rem}
+.contact-content h1{font-size:2.5rem;margin-bottom:2rem;color:var(--primary);text-align:center}
+.contact-form{background:var(--surface);padding:2rem;border-radius:var(--radius)}
+.contact-form p{text-align:center;color:var(--text-muted);margin-bottom:2rem}
+.form-group{margin-bottom:1.5rem}
+.form-group label{display:block;margin-bottom:0.5rem;font-weight:600}
+.contact-form input,.contact-form textarea{width:100%;padding:1rem;background:var(--background);border:2px solid var(--surface-light);border-radius:8px;color:var(--text)}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--primary)}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<div class="logo"><a href="../index.html">← Back</a></div>
+<ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li></ul>
+</nav>
+<div class="contact-content">
+<h1>📬 Contact Us</h1>
+<div class="contact-form">
+<p>Have questions? Send us a message!</p>
+<form onsubmit="event.preventDefault();alert('Thank you!');this.reset()">
+<div class="form-group"><label>Name</label><input type="text" placeholder="Your name" required></div>
+<div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com" required></div>
+<div class="form-group"><label>Message</label><textarea rows="5" placeholder="Your message" required></textarea></div>
+<button type="submit" class="btn-primary" style="width:100%">📤 Send</button>
+</form>
+</div>
+</div>
+<footer><p>© 2024 Class 10 Quiz Hub</p></footer>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.hero-content h1,.hero-content p,.hero-buttons,.hero-stats{animation:fadeInUp 0.8s ease backwards}
+.hero-content p{animation-delay:0.2s}
+.hero-buttons{animation-delay:0.4s}
+.hero-stats{animation-delay:0.6s}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.subject-card{animation:fadeInUp 0.5s ease backwards}
+.subject-card:nth-child(1){animation-delay:0.1s}
+.subject-card:nth-child(2){animation-delay:0.2s}
+.subject-card:nth-child(3){animation-delay:0.3s}
+.subject-card:nth-child(4){animation-delay:0.4s}
+.subject-card:nth-child(5){animation-delay:0.5s}
+.subject-card:nth-child(6){animation-delay:0.6s}
+.subject-card:active{transform:scale(0.98)}
+.feature-card{animation:slideUp 0.5s ease backwards}
+.feature-card:nth-child(1){animation-delay:0.1s}
+.feature-card:nth-child(2){animation-delay:0.2s}
+.feature-card:nth-child(3){animation-delay:0.3s}
+.feature-card:nth-child(4){animation-delay:0.4s}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}

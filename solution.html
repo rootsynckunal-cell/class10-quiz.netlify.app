@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution | Class 10 Quiz Hub</title>
+<link rel="stylesheet" href="../css/main.css">
+<style>
+.solution-card{background:var(--surface);padding:1.5rem;border-radius:var(--radius);margin-bottom:1rem;border-left:4px solid var(--success);transition:0.3s}
+.solution-card.wrong{border-left-color:var(--error)}
+.solution-number{color:var(--primary);font-weight:600;margin-bottom:0.5rem}
+.solution-question{font-size:1.1rem;margin-bottom:1rem}
+.solution-answer{padding:0.5rem;background:var(--background);border-radius:8px;margin-bottom:0.5rem}
+.your-answer{color:var(--error)}
+.correct-answer{color:var(--success)}
+.status-tag{display:inline-block;padding:0.3rem 0.8rem;border-radius:50px;font-size:0.8rem;font-weight:600}
+.status-correct{background:var(--success);color:#fff}
+.status-wrong{background:var(--error);color:#fff}
+.heading{font-size:2rem;text-align:center;margin-bottom:2rem;color:var(--primary)}
+.btn-group{display:flex;gap:1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap}
+.btn-group button{display:inline-flex;align-items:center;gap:0.5rem;padding:1rem 1.5rem;border-radius:var(--radius);font-size:1rem;font-weight:600;cursor:pointer;border:none;transition:0.3s}
+.btn-solution{background:var(--secondary);color:#fff}
+.btn-solution:hover{background:#0891b2}
+.btn-home{background:var(--surface);color:var(--text);border:2px solid var(--surface-light)}
+.btn-home:hover{border-color:var(--primary);color:var(--primary)}
+</style>
+</head>
+<body>
+<script>
+var savedTheme = localStorage.getItem('quizhub_theme') || 'dark';
+document.body.setAttribute('data-theme', savedTheme);
+</script>
+<nav class="navbar">
+<div class="logo"><a href="result.html">← Back</a></div>
+<div style="color:var(--primary);font-weight:bold;">Solutions</div>
+</nav>
+<div class="result-container">
+<h1 class="heading">📝 Question Solutions</h1>
+<div id="solutions-list"></div>
+<div class="btn-group">
+<button class="btn-solution" onclick="retakeQuiz()"><span>🔄</span> Try Again</button>
+<button class="btn-home" onclick="window.location.href='../index.html'"><span>🏠</span> Home</button>
+</div>
+</div>
+<script src="../js/data.js"></script>
+<script src="../js/utils.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+    var r=JSON.parse(sessionStorage.getItem('quizResult')||'{}');
+    if(!r.questions){window.location.href='../index.html';return}
+    var container=document.getElementById('solutions-list');
+    r.questions.forEach(function(q,index){
+        var userAns=r.answers[index]||'Not Attempted';
+        var isCorrect=userAns===q.a;
+        var card=document.createElement('div');
+        card.className='solution-card'+(isCorrect?'':' wrong');
+        card.innerHTML='<div class="solution-number">Q'+(index+1)+'</div>'+
+            '<div class="solution-question">'+q.q+'</div>'+
+            '<div class="solution-answer your-answer">Your Answer: '+userAns+'</div>'+
+            '<div class="solution-answer correct-answer">Correct Answer: '+q.a+'</div>'+
+            '<div class="status-tag '+(isCorrect?'status-correct':'status-wrong')+'">'+(isCorrect?'✓ Correct':'✗ Wrong')+'</div>';
+        container.appendChild(card);
+    });
+});
+function retakeQuiz(){window.location.href='quiz.html'}
+</script>
+</body>
+</html>

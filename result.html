@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result | Class 10 Quiz Hub</title>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/result.css">
+</head>
+<body>
+<script>
+var savedTheme = localStorage.getItem('quizhub_theme') || 'dark';
+document.body.setAttribute('data-theme', savedTheme);
+</script>
+<nav class="navbar">
+<div class="logo"><a href="../index.html">← Back</a></div>
+<div style="color:var(--primary);font-weight:bold;">Result</div>
+</nav>
+<div class="result-container">
+<div class="result-card">
+<h1>🎉 Quiz Result</h1>
+<div class="result-subject" id="result-subject-badge">Quiz</div>
+<div class="score-circle" id="score-circle"><span id="percentage">0%</span></div>
+<div class="stats-grid">
+<div class="stat-item"><span class="label">Total</span><span class="value" id="total-questions">0</span></div>
+<div class="stat-item correct"><span class="label">Correct</span><span class="value" id="correct-answers">0</span></div>
+<div class="stat-item wrong"><span class="label">Wrong</span><span class="value" id="wrong-answers">0</span></div>
+<div class="stat-item"><span class="label">Time</span><span class="value" id="time-taken">0m 0s</span></div>
+</div>
+<div class="grade-section">
+<h3>Grade: <span id="grade">F</span></h3>
+<p id="performance-message">Keep practicing!</p>
+</div>
+<div class="action-buttons">
+<button class="btn-solution" onclick="viewSolutions()"><span>📝</span> Solutions</button>
+<button class="btn-primary" onclick="retakeQuiz()"><span>🔄</span> Try Again</button>
+<button class="btn-home" onclick="goHome()"><span>🏠</span> Home</button>
+</div>
+</div>
+</div>
+<script src="../js/data.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/result.js"></script>
+<script>
+function viewSolutions(){window.location.href='solution.html'}
+function retakeQuiz(){
+    var r=JSON.parse(sessionStorage.getItem('quizResult')||'{}');
+    if(r.subject){
+        localStorage.setItem('selectedSubject',r.subject);
+        window.location.href='quiz.html';
+    }else{window.location.href='../index.html';}
+}
+function goHome(){window.location.href='../index.html';}
+</script>
+</body>
+</html>

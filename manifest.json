@@ -1,0 +1,9 @@
+{
+    "name": "Class 10 Quiz Hub",
+    "short_name": "Quiz Hub",
+    "description": "Quiz platform for Class 10 students",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#6366f1"
+}

@@ -1,0 +1,26 @@
+.quiz-container{max-width:800px;margin:100px auto 2rem;padding:0 1.5rem}
+#setup-panel{background:var(--surface);padding:3rem;border-radius:var(--radius);text-align:center}
+#setup-panel h2{font-size:2rem;margin-bottom:2rem;color:var(--text)}
+#setup-panel select{width:100%;padding:1rem;background:var(--background);border:2px solid var(--surface-light);border-radius:8px;color:var(--text);font-size:1rem}
+#quiz-panel{display:none}
+.progress-container{background:var(--surface);padding:1.5rem;border-radius:var(--radius);margin-bottom:1.5rem}
+.progress-bar{height:10px;background:var(--surface-light);border-radius:50px;overflow:hidden;margin-bottom:1rem}
+.progress-fill{height:100%;background:var(--gradient);border-radius:50px;transition:width 0.5s}
+.progress-text{display:flex;justify-content:space-between;font-size:0.9rem;color:var(--text-muted)}
+.timer{color:var(--secondary)}.timer.warning{color:var(--accent)}.timer.danger{color:var(--error);animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.question-card{background:var(--surface);padding:2rem;border-radius:var(--radius);margin-bottom:1.5rem}
+.question-number{color:var(--primary);font-weight:600;margin-bottom:1rem}
+.question-text{font-size:1.4rem;line-height:1.6;margin-bottom:2rem;color:var(--text)}
+.options-grid{display:grid;gap:1rem}
+.option-btn{display:flex;align-items:center;padding:1.2rem 1.5rem;background:var(--background);border:2px solid var(--surface-light);border-radius:8px;cursor:pointer;transition:0.3s;text-align:left;font-size:1.05rem;color:var(--text)}
+.option-btn:hover{border-color:var(--primary);transform:translateX(5px)}
+.option-btn.selected{border-color:var(--primary);background:rgba(99,102,241,0.2)}
+.option-label{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:var(--surface-light);border-radius:8px;margin-right:1rem;font-weight:700;color:var(--text)}
+.option-btn.selected .option-label{background:var(--primary);color:#fff}
+.quiz-nav{display:flex;gap:1rem;justify-content:space-between}
+.quiz-nav button{flex:1;padding:1rem}
+.quiz-nav button:disabled{opacity:0.5;cursor:not-allowed}
+#prev-btn{background:var(--surface);border:2px solid var(--surface-light);color:var(--text)}
+#prev-btn:hover:not(:disabled){border-color:var(--primary);color:var(--primary)}
+@media(max-width:768px){.quiz-container{margin-top:80px}.question-text{font-size:1.2rem}.quiz-nav{flex-direction:column}}
